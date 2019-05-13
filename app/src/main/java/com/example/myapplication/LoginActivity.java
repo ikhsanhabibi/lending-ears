@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity {
 
     Button btn_sign_in;
-    TextView sign_up;
+    TextView btn_sign_up;
     Button btn_continue;
     TextView forgot_password;
 
@@ -24,8 +24,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_sign_in = findViewById(R.id.btn_sign_in);
         btn_sign_in.setTypeface(typeface);
 
-        sign_up = findViewById(R.id.sign_up);
-        sign_up.setTypeface(typeface);
+        btn_sign_up = findViewById(R.id.btn_sign_up);
+        btn_sign_up.setTypeface(typeface);
 
         btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setTypeface(typeface);

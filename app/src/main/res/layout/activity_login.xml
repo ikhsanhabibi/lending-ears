@@ -20,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076" />
 
-    <TextView
-        android:id="@+id/sign_up"
+    <Button
+        android:id="@+id/btn_sign_up"
         android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:clickable="true"
+        android:layout_height="40dp"
+        android:background="@drawable/button_small_blue"
         android:text="SIGN UP"
-        android:textAlignment="center"
-        android:textColor="#D3D3D3"
+        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.749"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.076" />
+
 
 
     <EditText
