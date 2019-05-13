@@ -10,8 +10,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button signup;
-    Button signin;
+    Button signUp;
+    Button signIn;
 
 
     @Override
@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
 
 
-        signup = findViewById(R.id.signup);
-        signup.setTypeface(typeface);
-        signup.setOnClickListener(new View.OnClickListener() {
+        signUp = findViewById(R.id.signUp);
+        signUp.setTypeface(typeface);
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), SignUpActivity.class);
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        signin = findViewById(R.id.signin);
-        signin.setTypeface(typeface);
-        signin.setOnClickListener(new View.OnClickListener() {
+        signIn = findViewById(R.id.signIn);
+        signIn.setTypeface(typeface);
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), LoginActivity.class);

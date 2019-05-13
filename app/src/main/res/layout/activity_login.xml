@@ -6,22 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <Button
-        android:id="@+id/btn_sign_in"
+    <TextView
+        android:id="@+id/signIn"
         android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="@drawable/button_small_blue"
+        android:layout_height="30dp"
         android:text="SIGN IN"
-        android:textColor="#FFF"
+        android:textAlignment="center"
+        android:textColor="#5AABE3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.088" />
+
 
     <Button
-        android:id="@+id/btn_sign_up"
+        android:id="@+id/btn_signUp"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:background="@drawable/button_small_blue"
@@ -29,10 +30,10 @@
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.749"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.075" />
 
 
 
@@ -76,7 +77,7 @@
 
 
     <TextView
-        android:id="@+id/forgot_password"
+        android:id="@+id/forgotPassword"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:clickable="true"
