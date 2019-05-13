@@ -19,11 +19,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Change font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
-
 
         signUp = findViewById(R.id.signUp);
         signUp.setTypeface(typeface);
+
+        signIn = findViewById(R.id.signIn);
+        signIn.setTypeface(typeface);
+
+
+        // setOnClickListener
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        signIn = findViewById(R.id.signIn);
-        signIn.setTypeface(typeface);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
