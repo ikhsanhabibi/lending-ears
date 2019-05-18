@@ -28,5 +28,5 @@ task clean(type: Delete) {
 
 configurations.all {
     resolutionStrategy {
-        force 'com.android.support:support-v4:27.1.0'
+        force 'com.android.support:support-v4:27.layer1.layer_0'
     }}

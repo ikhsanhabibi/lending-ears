@@ -26,6 +26,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/tell_your_story_icon"
+        android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/listen_a_story_icon"
+        android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +61,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.794" />
 
 </android.support.constraint.ConstraintLayout>
