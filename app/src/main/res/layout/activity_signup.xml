@@ -7,12 +7,16 @@
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:scaleType="fitCenter"
-        android:background="@drawable/background_light_gray"
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/background_light_gray"
+        android:scaleType="fitCenter"
+        tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="-52dp" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="375dp"
         android:layout_height="269dp"
         android:src="@drawable/rectangle_blue"
@@ -55,6 +59,7 @@
         app:layout_constraintVertical_bias="0.091" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="327dp"
         android:layout_height="271dp"
         android:src="@drawable/rectangle_white"
@@ -67,12 +72,12 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="13"
         android:hint="Name"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -81,7 +86,7 @@
         app:layout_constraintVertical_bias="0.252" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="13"
@@ -95,7 +100,7 @@
         app:layout_constraintVertical_bias="0.375" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="13"
@@ -118,5 +123,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.703" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.819" />
+
 
 </android.support.constraint.ConstraintLayout>

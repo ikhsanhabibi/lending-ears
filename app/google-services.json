@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "949257122225",
+    "firebase_url": "https://lendingears-9bd7d.firebaseio.com",
+    "project_id": "lendingears-9bd7d",
+    "storage_bucket": "lendingears-9bd7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949257122225:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949257122225-4ma6ermfj8r2q7fm92pj9p3jfsbtisrq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "b791327e4aecf7ade27d0504380667851336bf93"
+          }
+        },
+        {
+          "client_id": "949257122225-dsheej5sse7pa9ml8kscilou7ec530o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQJ5kXVFBd_HqRNzslmtPIX-3VwoOChkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949257122225-dsheej5sse7pa9ml8kscilou7ec530o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
