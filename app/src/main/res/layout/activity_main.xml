@@ -24,7 +24,7 @@
 
     <Button
         android:textColor="#5AABE3"
-        android:id="@+id/signup"
+        android:id="@+id/signUp"
         android:text="SIGN UP"
         android:layout_width="300dp"
         android:layout_height="40dp"
@@ -37,7 +37,7 @@
 
     <Button
         android:textColor="#5AABE3"
-        android:id="@+id/signin"
+        android:id="@+id/signIn"
         android:text="SIGN IN"
         android:layout_width="300dp"
         android:layout_height="40dp"
