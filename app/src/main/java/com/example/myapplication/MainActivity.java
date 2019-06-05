@@ -11,8 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button signup;
-    Button signin;
+    Button signUp;
+    Button signIn;
 
 
     @Override
@@ -20,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Change font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
 
+        signUp = findViewById(R.id.signUp);
+        signUp.setTypeface(typeface);
 
-        signup = findViewById(R.id.signup);
-        signup.setTypeface(typeface);
-        signup.setOnClickListener(new View.OnClickListener() {
+        signIn = findViewById(R.id.signIn);
+        signIn.setTypeface(typeface);
+
+
+        // setOnClickListener
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), SignUpActivity.class);
@@ -33,11 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        signin = findViewById(R.id.signin);
-        signin.setTypeface(typeface);
-        signin.setOnClickListener(new View.OnClickListener() {
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), LoginActivity.class);
