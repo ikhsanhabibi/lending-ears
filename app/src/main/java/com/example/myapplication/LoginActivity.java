@@ -23,10 +23,10 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btn_sign_in;
-    TextView sign_up;
+    Button btn_signUp;
+    TextView signIn;
     Button btn_continue;
-    TextView forgot_password;
+    TextView forgotPassword;
     FirebaseAuth mAuth;
     EditText editTextEmail, editTextPassword;
     ProgressBar progressBar;
@@ -40,16 +40,16 @@ public class LoginActivity extends AppCompatActivity {
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
 
-        btn_sign_in = findViewById(R.id.btn_sign_in);
-        btn_sign_in.setTypeface(typeface);
+        signIn = findViewById(R.id.btn_signUp);
+        signIn.setTypeface(typeface);
 
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         progressBar = findViewById(R.id.progressBar);
 
-        sign_up = findViewById(R.id.sign_up);
-        sign_up.setTypeface(typeface);
-        sign_up.setOnClickListener(new View.OnClickListener() {
+        btn_signUp = findViewById(R.id.btn_signUp);
+        btn_signUp.setTypeface(typeface);
+        btn_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), SignUpActivity.class);
@@ -66,8 +66,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        forgot_password = findViewById(R.id.forgot_password);
-        forgot_password.setTypeface(typeface);
+        forgotPassword = findViewById(R.id.forgotPassword);
+        forgotPassword.setTypeface(typeface);
 
         progressBar.setVisibility(View.INVISIBLE);
 
