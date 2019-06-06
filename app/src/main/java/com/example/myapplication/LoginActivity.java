@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
 
-        signIn = findViewById(R.id.btn_signUp);
+        signIn = findViewById(R.id.signIn);
         signIn.setTypeface(typeface);
 
         editTextEmail = findViewById(R.id.editTextEmail);

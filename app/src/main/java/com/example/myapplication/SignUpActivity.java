@@ -24,8 +24,8 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
 
     private Button btn_continue;
+    private Button btn_signIn;
     private TextView sign_up;
-    private TextView sign_in;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextName;
@@ -50,8 +50,8 @@ public class SignUpActivity extends AppCompatActivity {
         sign_up = findViewById(R.id.sign_up);
         sign_up.setTypeface(typeface);
 
-        sign_in = findViewById(R.id.sign_in);
-        sign_in.setTypeface(typeface);
+        btn_signIn = findViewById(R.id.btn_signIn);
+        btn_signIn.setTypeface(typeface);
 
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        sign_in.setOnClickListener(new View.OnClickListener() {
+        btn_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent s = new Intent(getApplicationContext(), LoginActivity.class);
