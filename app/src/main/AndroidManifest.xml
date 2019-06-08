@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FindSpeakerActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".FindSpeakerActivity" />
         <activity android:name=".FindListenerActivity" />
         <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity">
