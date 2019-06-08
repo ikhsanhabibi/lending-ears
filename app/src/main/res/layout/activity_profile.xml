@@ -38,6 +38,7 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="90dp"
         android:background="@drawable/logo_lending_ears_transparent"
@@ -81,17 +82,18 @@
         android:layout_width="350dp"
         android:layout_height="340dp"
         android:alpha="0.6"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:src="@drawable/bg_oval_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.897" />
 
 
     <TextView
+        android:id="@+id/profileName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-black"
@@ -99,13 +101,13 @@
         android:text="Max Musterman"
         android:textAlignment="center"
         android:textColor="#5AABE3"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.372" />
 
 
 
