@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -9,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.sinch.android.rtc.PushPair;
 import com.sinch.android.rtc.Sinch;
 import com.sinch.android.rtc.SinchClient;
@@ -58,10 +62,34 @@ public class TellYourStoryActivity extends AppCompatActivity {
         sinchClient.setSupportCalling(true);
         sinchClient.startListeningOnActiveConnection();
 
-        sinchClient.getCallClient().addCallClientListener(new SinchCAllClientListener());
+        sinchClient.getCallClient().addCallClientListener(new SinchCallClientListener());
 
         sinchClient.start();
+        
+        
+        fetchAllUsers();
 
+    }
+
+    private void fetchAllUsers() {
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                usersArrayList.clear();
+
+                for (DataSnapshot dss:dataSnapshot.getChildren()){
+                    FirebaseUser firebaseUser = dss.getValue(FirebaseUser.class);
+
+                    usersArrayList.add(firebaseUser);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private class SinchCallListener implements CallListener{
@@ -89,7 +117,7 @@ public class TellYourStoryActivity extends AppCompatActivity {
         }
     }
 
-    private class SinchCAllClientListener implements CallClientListener {
+    private class SinchCallClientListener implements CallClientListener {
         @Override
         public void onIncomingCall(CallClient callClient, Call call) {
             // later open dialog for new incoming call
