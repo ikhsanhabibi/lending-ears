@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CallingScreenActivity"></activity>
+        <activity android:name=".CategoryFormActivity"></activity>
+        <activity android:name=".CallingScreenActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".GoOnlineActivity"></activity>
+        <activity android:name=".GoOnlineActivity" />
         <activity android:name=".FindSpeakerActivity" />
         <activity android:name=".FindListenerActivity" />
         <activity android:name=".HomeScreenActivity" />
