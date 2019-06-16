@@ -75,6 +75,7 @@
         app:layout_constraintVertical_bias="0.261" />
 
     <ImageView
+        android:id="@+id/tellstoryBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/tell_your_story_icon"
@@ -88,6 +89,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <ImageView
+        android:id="@+id/listenstoryBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/listen_a_story_icon"

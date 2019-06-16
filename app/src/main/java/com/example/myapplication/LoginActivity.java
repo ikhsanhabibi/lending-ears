@@ -113,12 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
                     finish();
-                    Intent intent = new Intent(LoginActivity.this, GoOnlineActivity.class);
-=======
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
->>>>>>> profiledone
+                    Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
