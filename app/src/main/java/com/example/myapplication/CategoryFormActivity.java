@@ -1,10 +1,13 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
@@ -30,6 +33,22 @@ public class CategoryFormActivity extends AppCompatActivity {
 
         next = findViewById(R.id.next);
         next.setTypeface(typeface);
+
+
+        // On Click
+
+        next =  findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VoiceCallActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("GO", false);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
 }

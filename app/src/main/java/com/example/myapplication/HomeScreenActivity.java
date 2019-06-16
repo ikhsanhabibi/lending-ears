@@ -15,6 +15,9 @@ public class HomeScreenActivity extends AppCompatActivity {
     TextView listenStory;
     ImageView profile;
 
+    ImageView tell_your_story_icon;
+    ImageView listen_a_story_icon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,20 @@ public class HomeScreenActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        tell_your_story_icon = (ImageView) findViewById(R.id.tell_your_story_icon);
+        tell_your_story_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VoiceCallActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("GO", false);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
 
     }

@@ -12,11 +12,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,6 +37,8 @@ public class SignUpActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     FirebaseAuth mAuth;
+
+    DatabaseReference reference;
 
 
 
@@ -53,6 +59,8 @@ public class SignUpActivity extends AppCompatActivity {
         btn_signIn = findViewById(R.id.btn_signIn);
         btn_signIn.setTypeface(typeface);
 
+
+        // Firebase
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -60,6 +68,9 @@ public class SignUpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        reference  = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        // On Click
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,9 +96,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void registerUser(){
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-        String name = editTextName.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
+        final String name = editTextName.getText().toString().trim();
 
         if (email.isEmpty()){
             editTextEmail.setError("Email is required");
@@ -125,20 +136,30 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
-                if (task.isSuccessful()){
-                    Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                }
-                else {
 
-                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "Email is already in use", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
+                FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                User user = new User(name,email,password,firebaseUser.getUid());
+
+                reference.child(firebaseUser.getUid()).setValue(user)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                    }
+                                else {
+                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                        Toast.makeText(getApplicationContext(), "Email is already in use", Toast.LENGTH_SHORT).show();
+                                        }
+                                    else {
+                                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
+                                }
+                            });
             }
         });
     }
