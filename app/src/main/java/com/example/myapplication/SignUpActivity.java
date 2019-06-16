@@ -17,7 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
 
 
@@ -83,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void registerUser(){
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String name = editTextName.getText().toString().trim();
+        final String name = editTextName.getText().toString().trim();
 
         if (email.isEmpty()){
             editTextEmail.setError("Email is required");
@@ -123,6 +127,15 @@ public class SignUpActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()){
                     Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+
+                    String userId = mAuth.getCurrentUser().getUid();
+                    DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
+                    Map userInfo = new HashMap<>();
+                    userInfo.put("name", name.toString());
+                    userInfo.put("profileImageUrl", "https://firebasestorage.googleapis.com/v0/b/lendingears-9bd7d.appspot.com/o/profileImages%2Fkisspng-user-profile-2018-in-sight-user-conference-expo-5b554c0997cce2.5463555115323166816218.png?alt=media&token=35746e02-6376-486d-816e-04a05ff87229");
+
+                    currentUserDb.updateChildren(userInfo);
+
                     finish();
                     startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                 }

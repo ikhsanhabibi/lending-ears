@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -52,6 +53,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
     private Uri resultUri;
 
     private RadioGroup mRadioGroup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +125,8 @@ public class ProfileSettingActivity extends AppCompatActivity {
 
                     if(map.get("gender") != null){
                         gender = map.get("gender").toString();
+                        if (gender.equals("Male")) mRadioGroup.check(R.id.maleBtn);
+                        else if (gender.equals("Female")) mRadioGroup.check(R.id.femaleBtn);
                     }
                 }
             }
@@ -153,7 +157,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
         mUserDatabase.updateChildren(userInfo);
 
         if(resultUri != null){
-            StorageReference filepath = FirebaseStorage.getInstance().getReference().child("profileImages").child(userId);
+            final StorageReference filepath = FirebaseStorage.getInstance().getReference().child("profileImages").child(userId);
             Bitmap bitmap = null;
 
             try {
@@ -165,7 +169,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
             byte[] data = baos.toByteArray();
-            UploadTask uploadTask = filepath.putBytes(data);
+            final UploadTask uploadTask = filepath.putBytes(data);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -173,20 +177,29 @@ public class ProfileSettingActivity extends AppCompatActivity {
                 }
             });
 
+            //get download link from Firebase Storage after upload and put it in Database
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Task<Uri> downloadUrl = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                    filepath.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()){
+                                Uri downloadUrl = task.getResult();
 
-                    Map userInfo = new HashMap<>();
-                    userInfo.put("profileImageUrl", downloadUrl.toString());
-                    mUserDatabase.updateChildren(userInfo);
+                                Map userInfo = new HashMap<>();
+                                userInfo.put("profileImageUrl", downloadUrl.toString());
+                                mUserDatabase.updateChildren(userInfo);
 
-                    finish();
-                    return;
+                                finish();
+                                return;
+                            } else {
+                                finish();
+                            }
+                        }
+                    });
                 }
             });
-
 
         }else{
             finish();
