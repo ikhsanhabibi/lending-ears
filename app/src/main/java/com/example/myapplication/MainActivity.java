@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent s = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent s = new Intent(getApplicationContext(), EndingCallingScreenActivity.class);
                 startActivity(s);
                 finish();
             }
