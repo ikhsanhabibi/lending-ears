@@ -13,6 +13,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     TextView profileName;
     ImageView logo;
+    ImageView notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,17 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HomeScreenActivity.class);
+                intent.putExtra("GO", false);
+                startActivity(intent);
+            }
+        });
+
+
+        notification = findViewById(R.id.notification);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NotificationActivity.class);
                 intent.putExtra("GO", false);
                 startActivity(intent);
             }

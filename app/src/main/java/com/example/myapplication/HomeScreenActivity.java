@@ -15,7 +15,7 @@ public class           HomeScreenActivity extends AppCompatActivity {
 
     TextView tellStory;
     TextView listenStory;
-    ImageView profile, tellstoryBtn, listenstoryBtn;
+    ImageView profile, tellstoryBtn, listenstoryBtn, notification;
     FirebaseAuth mAuth;
 
     @Override
@@ -47,6 +47,17 @@ public class           HomeScreenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        notification = findViewById(R.id.notification);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NotificationActivity.class);
+                intent.putExtra("GO", false);
+                startActivity(intent);
+            }
+        });
+
 
         tellstoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
