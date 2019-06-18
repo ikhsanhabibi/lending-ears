@@ -147,11 +147,12 @@ public class SignUpActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                     finish();
-                                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                    startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                                     }
                                 else {
                                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                         Toast.makeText(getApplicationContext(), "Email is already in use", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.INVISIBLE);
                                         }
                                     else {
                                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();

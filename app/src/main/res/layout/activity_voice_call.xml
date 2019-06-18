@@ -4,12 +4,46 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".VoiceCallActivity">
+tools:context=".VoiceCallActivity"
+    android:orientation="vertical"
 
-    <android.support.v7.widget.RecyclerView
+    >
+
+    <ImageView
+        android:src="@drawable/background_blue_full"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="681dp"
+        android:layout_marginTop="50dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:scrollbarStyle="insideOverlay"
         ></android.support.v7.widget.RecyclerView>
+
+    <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal|top">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="ONLINE USERS"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            />
+
+    </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+
+
+
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader;
 import com.example.myapplication.Adapters.AllUsersAdapter;
 import com.example.myapplication.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,11 +46,21 @@ public class VoiceCallActivity extends AppCompatActivity {
     ArrayList<User> userArrayList;
     DatabaseReference reference;
 
+    TextView header;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voice_call);
+
+        // Change font
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
+
+        header = (TextView) findViewById(R.id.header);
+        header.setTypeface(typeface);
+
 
         // recyclerView
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);

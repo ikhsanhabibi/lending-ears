@@ -5,7 +5,10 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
-    android:layout_margin="50dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="15dp"
     app:cardBackgroundColor="#ffff"
     >
@@ -19,15 +22,15 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:orientation="vertical"
-         android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:src="@drawable/logo_ears"
             android:id="@+id/itemImage"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
             >
 
             <TextView
@@ -35,20 +38,42 @@
                 android:layout_height="wrap_content"
                 android:text="User Name"
                 android:id="@+id/itemName"
-                android:padding="10dp"
+                android:padding="2dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
 
-            <Button
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CALL"
-                android:id="@+id/callButton"
-                android:textSize="16sp"
+                android:text="Category"
+                android:id="@+id/itemCategory"
+                android:padding="2dp"
+                android:textSize="15sp"
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:id="@+id/itemDescription"
+                android:padding="2dp"
+                android:textSize="15sp"
+                />
+
+
         </LinearLayout>
+
+
+        <Button
+            android:id="@+id/callButton"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_blue"
+            android:text="CALL"
+            android:textColor="#FFFFFF" />
+
 
     </LinearLayout>
 
