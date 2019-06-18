@@ -89,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void registerUser(){
-        String email = editTextEmail.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         final String name = editTextName.getText().toString().trim();
 
@@ -132,11 +132,14 @@ public class SignUpActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
 
+                    String[] username = email.toString().split("@",2);
+
                     String userId = mAuth.getCurrentUser().getUid();
                     DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
                     Map userInfo = new HashMap<>();
                     userInfo.put("name", name.toString());
                     userInfo.put("profileImageUrl", "https://firebasestorage.googleapis.com/v0/b/lendingears-9bd7d.appspot.com/o/profileImages%2Fkisspng-user-profile-2018-in-sight-user-conference-expo-5b554c0997cce2.5463555115323166816218.png?alt=media&token=35746e02-6376-486d-816e-04a05ff87229");
+                    userInfo.put("username", username[0]);
 
                     currentUserDb.updateChildren(userInfo);
 

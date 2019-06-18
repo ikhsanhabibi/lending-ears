@@ -38,7 +38,7 @@ import java.util.Map;
 
 public class ProfileSettingActivity extends AppCompatActivity {
 
-    private EditText mNameField, mAboutField;
+    private EditText mNameField, mAboutField, mUserNameField;
 
     private Button mBack, mConfirm;
 
@@ -48,11 +48,9 @@ public class ProfileSettingActivity extends AppCompatActivity {
 
     private DatabaseReference mUserDatabase;
 
-    private String userId, name, about, profileImageUrl, gender;
+    private String userId, name, username, about, profileImageUrl;
 
     private Uri resultUri;
-
-    private RadioGroup mRadioGroup;
 
 
     @Override
@@ -60,10 +58,10 @@ public class ProfileSettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_setting);
 
-        mNameField = findViewById(R.id.name);
+        mNameField = findViewById(R.id.realname);
+        mUserNameField = findViewById(R.id.username);
         mAboutField = findViewById(R.id.about);
 
-        mRadioGroup = findViewById(R.id.radioGroup);
 
         mProfileImage = findViewById(R.id.profileimage);
 
@@ -113,6 +111,12 @@ public class ProfileSettingActivity extends AppCompatActivity {
                         name = map.get("name").toString();
                         mNameField.setText(name);
                     }
+
+                    if(map.get("username") != null) {
+                        username = map.get("username").toString();
+                        mUserNameField.setText(username);
+                    }
+
                     if(map.get("about") != null){
                         about = map.get("about").toString();
                         mAboutField.setText(about);
@@ -123,11 +127,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
                         Glide.with(getApplication()).load(profileImageUrl).into(mProfileImage);
                     }
 
-                    if(map.get("gender") != null){
-                        gender = map.get("gender").toString();
-                        if (gender.equals("Male")) mRadioGroup.check(R.id.maleBtn);
-                        else if (gender.equals("Female")) mRadioGroup.check(R.id.femaleBtn);
-                    }
+
                 }
             }
 
@@ -141,19 +141,12 @@ public class ProfileSettingActivity extends AppCompatActivity {
     private void saveUserInformation(){
         name = mNameField.getText().toString();
         about = mAboutField.getText().toString();
-
-        int selectId = mRadioGroup.getCheckedRadioButtonId();
-
-        final RadioButton radioButton = findViewById(selectId);
-
-        if(radioButton.getText() == null){
-            return;
-        }
+        username = mUserNameField.getText().toString();
 
         Map userInfo = new HashMap();
         userInfo.put("name", name);
+        userInfo.put("username", username);
         userInfo.put("about", about);
-        userInfo.put("gender", radioButton.getText().toString());
         mUserDatabase.updateChildren(userInfo);
 
         if(resultUri != null){
@@ -167,7 +160,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             }
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 20, baos);
             byte[] data = baos.toByteArray();
             final UploadTask uploadTask = filepath.putBytes(data);
             uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -190,9 +183,9 @@ public class ProfileSettingActivity extends AppCompatActivity {
                                 Map userInfo = new HashMap<>();
                                 userInfo.put("profileImageUrl", downloadUrl.toString());
                                 mUserDatabase.updateChildren(userInfo);
-
                                 finish();
-                                return;
+                                Intent intent = new Intent(ProfileSettingActivity.this, ProfileActivity.class);
+                                startActivity(intent);
                             } else {
                                 finish();
                             }
@@ -200,9 +193,10 @@ public class ProfileSettingActivity extends AppCompatActivity {
                     });
                 }
             });
-
         }else{
             finish();
+            Intent intent = new Intent(ProfileSettingActivity.this, ProfileActivity.class);
+            startActivity(intent);
         }
     }
 

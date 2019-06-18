@@ -1,16 +1,59 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class CategoryFormActivity extends AppCompatActivity {
 
     Button next;
+
+    private FirebaseAuth mAuth;
+
+    private DatabaseReference mUserStories;
+
+    Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+
+    MaterialBetterSpinner betterSpinner;
+
+    EditText mDescription;
+
+    String userId, category, description;
 
     String [] SPINNERLIST = {"Relationship", "Education", "Sports", "Family Life", "Social Issues", "Other"};
 
@@ -20,9 +63,9 @@ public class CategoryFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category_form);
 
         // Dropdown list
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
-        MaterialBetterSpinner betterSpinner = (MaterialBetterSpinner) findViewById(R.id.android_material_design_spinner);
+        betterSpinner = (MaterialBetterSpinner) findViewById(R.id.categorylist);
         betterSpinner.setAdapter(arrayAdapter);
 
         // Change font
@@ -30,6 +73,42 @@ public class CategoryFormActivity extends AppCompatActivity {
 
         next = findViewById(R.id.next);
         next.setTypeface(typeface);
+
+        mDescription = findViewById(R.id.storydescription);
+
+        mAuth = FirebaseAuth.getInstance();
+        userId = mAuth.getCurrentUser().getUid();
+        mUserStories = FirebaseDatabase.getInstance().getReference().child("Stories").child(userId);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitStories();
+                Intent intent = new Intent(CategoryFormActivity.this, FindListenerActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
+
+
+    private void submitStories(){
+
+        description = mDescription.getText().toString();
+        category = betterSpinner.getText().toString();
+
+        Date date = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        String currentTime = formatter.format(date);
+
+
+        Map userStories = new HashMap();
+
+        userStories.put("category", category);
+        userStories.put("description", description);
+
+        mUserStories.child(currentTime).updateChildren(userStories);
+    }
 }
