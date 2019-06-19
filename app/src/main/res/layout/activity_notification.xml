@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeScreenActivity">
+    tools:context=".NotificationActivity">
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -33,9 +34,10 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="90dp"
-        android:background="@drawable/logo_lending_ears"
+        android:background="@drawable/logo_lending_ears_transparent"
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,10 +48,9 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/notification"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:background="@drawable/button_notification_transparent"
+        android:background="@drawable/button_notifications_full"
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,64 +61,52 @@
         app:layout_constraintVertical_bias="0.036" />
 
 
-    <TextView
-        android:id="@+id/tellStory"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:clickable="true"
-        android:text="TELL YOUR STORY"
-        android:textAlignment="center"
-        android:textColor="#5AABE3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.261" />
-
     <ImageView
-        android:id="@+id/tellstoryBtn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/tell_your_story_icon"
-        android:background="@drawable/tell_your_story_icon"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/notifications"
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <ImageView
-        android:id="@+id/listenstoryBtn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/listen_a_story_icon"
-        android:background="@drawable/listen_a_story_icon"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_oval_blue"
         android:clickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintVertical_bias="0.629" />
 
-    <TextView
-        android:id="@+id/listenStory"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/notifications_text"
         android:clickable="true"
-        android:text="LISTEN A STORY"
-        android:textAlignment="center"
-        android:textColor="#5AABE3"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintVertical_bias="0.633" />
+
+
+
+
+
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>
