@@ -120,7 +120,8 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "User could not be logged in",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
             }
         });
