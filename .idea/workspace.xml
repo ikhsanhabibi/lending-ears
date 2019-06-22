@@ -9,7 +9,12 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67bb524a-80fe-4c1b-893d-8b0607620631" name="Default Changelist" comment="" />
+    <list default="true" id="67bb524a-80fe-4c1b-893d-8b0607620631" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/all_users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/all_users.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +64,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/VoiceCallActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="273" column="9" lean-forward="true" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+            <state relative-caret-position="3096">
+              <caret line="263" column="25" selection-start-line="263" selection-start-column="25" selection-end-line="263" selection-end-column="25" />
               <folding>
                 <element signature="e#5909#6097#0" expanded="true" />
                 <element signature="e#6096#6097#0" expanded="true" />
-                <element signature="e#7557#7981#0" expanded="true" />
+                <element signature="e#5887#6144#0" expanded="true" />
+                <element signature="e#6143#6144#0" expanded="true" />
                 <element signature="e#7980#7981#0" expanded="true" />
                 <element signature="method#timeElapsed#0;class#VoiceCallActivity#0" />
               </folding>
@@ -75,11 +81,67 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_setting.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="108" column="4" lean-forward="true" selection-start-line="108" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileSettingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1570">
+              <caret line="208" column="49" lean-forward="true" selection-start-line="208" selection-start-column="49" selection-end-line="208" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/FindSpeakerActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -87,79 +149,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="119" column="46" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+            <state relative-caret-position="278">
+              <caret line="124" column="13" lean-forward="true" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/EndingCallingScreenActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/HomeScreenActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="72" column="85" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ending_calling_screen.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/all_users.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calling_screen.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-951">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice_call.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-              <folding>
-                <element signature="e#872#1134#0" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -212,9 +213,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/HomeScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/SignUpActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_find_listener.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CallingScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
@@ -222,6 +220,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/EndingCallingScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_ending_calling_screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calling_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/all_users.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java" />
       </list>
     </option>
   </component>
@@ -387,7 +389,7 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Pixel_2_API_28" />
+    <property name="device.picker.selection" value="Pixel_2_API_28_2" />
     <property name="settings.editor.selected.configurable" value="instant.run" />
   </component>
   <component name="RecentsManager">
@@ -524,10 +526,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Resources Explorer" order="0" weight="0.32995737" />
       <window_info id="Captures" order="1" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49945474" visible="true" weight="0.17590618" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49945474" visible="true" weight="0.17590618" />
       <window_info id="Structure" order="3" sideWeight="0.50054526" side_tool="true" weight="0.32995737" />
       <window_info id="Build Variants" order="4" sideWeight="0.50054526" side_tool="true" weight="0.32995737" />
       <window_info id="Image Layers" order="5" />
@@ -543,7 +546,7 @@
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" weight="0.3293348" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info active="true" anchor="bottom" id="Debug" order="9" sideWeight="0.4989339" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.4989339" visible="true" weight="0.3293348" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Preview" order="2" weight="0.47707888" />
@@ -675,33 +678,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_oval_blue.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="178" column="53" selection-start-line="178" selection-start-column="53" selection-end-line="178" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_setting.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileSettingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="187" column="54" selection-start-line="187" selection-start-column="54" selection-end-line="187" selection-end-column="54" />
-          <folding>
-            <element signature="e#2789#2944#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -722,13 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="47" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -757,32 +726,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/FindSpeakerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/FindListenerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/all_users.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -820,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -842,16 +782,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice_call.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="119" column="46" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/EndingCallingScreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="499">
           <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
         </state>
       </provider>
@@ -867,30 +808,89 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calling_screen.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-951">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice_call.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/FindSpeakerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/VoiceCallActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="273" column="9" lean-forward="true" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+        <state relative-caret-position="3096">
+          <caret line="263" column="25" selection-start-line="263" selection-start-column="25" selection-end-line="263" selection-end-column="25" />
           <folding>
             <element signature="e#5909#6097#0" expanded="true" />
             <element signature="e#6096#6097#0" expanded="true" />
-            <element signature="e#7557#7981#0" expanded="true" />
+            <element signature="e#5887#6144#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
             <element signature="e#7980#7981#0" expanded="true" />
             <element signature="method#timeElapsed#0;class#VoiceCallActivity#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/all_users.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/CategoryFormActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="124" column="13" lean-forward="true" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileSettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1570">
+          <caret line="208" column="49" lean-forward="true" selection-start-line="208" selection-start-column="49" selection-end-line="208" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_setting.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="108" column="4" lean-forward="true" selection-start-line="108" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/Adapters/AllUsersAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
     </entry>

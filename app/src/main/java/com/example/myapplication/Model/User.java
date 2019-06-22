@@ -2,13 +2,14 @@ package com.example.myapplication.Model;
 
 public class User {
 
-    public String username, category, description, userid;
+    public String username, category, description, userid, profileimageUrl;
 
-    public User(String username, String category, String description, String userid) {
+    public User(String username, String category, String description, String userid, String profileimageUrl) {
         this.username = username;
         this.category = category;
         this.description = description;
         this.userid = userid;
+        this.profileimageUrl = profileimageUrl;
     }
 
     public  User(){
@@ -44,4 +45,10 @@ public class User {
     public void setUserid(String userid) {
         this.userid = userid;
     }
+
+    public String getProfileimageUrl() {
+        return profileimageUrl;
+    }
+
+    public void setProfileimageUrl(String profileimageUrl) { this.profileimageUrl = profileimageUrl; }
 }

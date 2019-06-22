@@ -1,17 +1,21 @@
 package com.example.myapplication.Adapters;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.Model.User;
 import com.example.myapplication.R;
 import com.example.myapplication.VoiceCallActivity;
+import com.google.firebase.database.DatabaseReference;
 
 import org.w3c.dom.Text;
 
@@ -21,6 +25,7 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUse
 
     Activity context;
     ArrayList<User> userArrayList;
+    ImageView profileImageView;
 
     public AllUsersAdapter(Activity context, ArrayList<User> userArrayList){
         this.context = context;
@@ -44,6 +49,7 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUse
         holder.textViewName.setText(user.getName());
         holder.textViewCategory.setText(user.getCategory());
         holder.textViewDescription.setText(user.getDescription());
+        Glide.with(context).load(user.getProfileimageUrl()).into(profileImageView);
     }
 
     @Override
@@ -60,6 +66,8 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUse
             textViewName = (TextView)itemView.findViewById(R.id.itemName);
             textViewCategory = (TextView)itemView.findViewById(R.id.itemCategory);
             textViewDescription = (TextView)itemView.findViewById(R.id.itemDescription);
+            profileImageView = (ImageView)itemView.findViewById(R.id.profileImage);
+
             button = itemView.findViewById(R.id.callButton);
 
             button.setOnClickListener(new View.OnClickListener() {

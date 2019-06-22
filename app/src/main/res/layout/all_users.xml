@@ -24,7 +24,7 @@
             android:orientation="vertical"
             android:layout_margin="15dp"
             android:src="@drawable/logo_ears"
-            android:id="@+id/itemImage"/>
+            android:id="@+id/profileImage"/>
 
         <LinearLayout
             android:layout_width="190dp"

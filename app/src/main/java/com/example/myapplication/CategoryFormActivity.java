@@ -116,6 +116,20 @@ public class CategoryFormActivity extends AppCompatActivity {
             }
         });
 
+        mUserDatabase.child("profileImageUrl").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+                userStories.put("profileimageUrl", url);
+                mUserStories.updateChildren(userStories);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         userStories.put("category", category);
         userStories.put("description", description);
         userStories.put("userid", userId);
