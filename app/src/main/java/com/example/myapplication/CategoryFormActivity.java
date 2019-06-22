@@ -89,7 +89,6 @@ public class CategoryFormActivity extends AppCompatActivity {
                 Intent intent = new Intent(CategoryFormActivity.this, VoiceCallActivity.class);
                 intent.putExtra("findlistener", R.layout.activity_find_listener);
                 startActivity(intent);
-                finish();
             }
         });
     }
