@@ -38,8 +38,17 @@ import com.sinch.android.rtc.calling.CallClientListener;
 import com.sinch.android.rtc.calling.CallListener;
 import com.sinch.android.rtc.calling.CallState;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 
 public class VoiceCallActivity extends AppCompatActivity {
@@ -50,13 +59,17 @@ public class VoiceCallActivity extends AppCompatActivity {
     SinchClient sinchClient;
     Call call;
     ArrayList<User> userArrayList;
-    DatabaseReference reference;
+    DatabaseReference reference, mCallDatabase;
 
     ImageView layer_2, layer_3, hangupBtn;
 
     Animation layer2, layer3;
 
     TextView header;
+
+    long startTime;
+
+    String caller2uid, historycallid;
 
     private Chronometer chronometer2;
 
@@ -99,6 +112,7 @@ public class VoiceCallActivity extends AppCompatActivity {
 
         userArrayList = new ArrayList<>();
         reference = FirebaseDatabase.getInstance().getReference().child("Stories");
+        mCallDatabase = FirebaseDatabase.getInstance().getReference().child("Calls");
 
         // Firebase
         auth = FirebaseAuth.getInstance();
@@ -162,18 +176,18 @@ public class VoiceCallActivity extends AppCompatActivity {
         @Override
         public void onCallEstablished(final Call call) {
             Toast.makeText(getApplicationContext(), "Call established", Toast.LENGTH_SHORT).show();
-            AlertDialog alertDialogCall = new AlertDialog.Builder(VoiceCallActivity.this).create();
-            alertDialogCall.setTitle("CONNECTING");
-            alertDialogCall.setMessage("Connecting..Just wait a little bit..");
-            alertDialogCall.dismiss();
             setContentView(R.layout.activity_calling_screen);
+
+            startTime = System.currentTimeMillis();
             chronometer2 = findViewById(R.id.chronometer2);
             chronometer2.start();
+
             hangupBtn = findViewById(R.id.hangupBtn);
             hangupBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     call.hangup();
+                    chronometer2.stop();
                 }
             });
         }
@@ -183,6 +197,22 @@ public class VoiceCallActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Call ended", Toast.LENGTH_SHORT).show();
             call = null;
             endedCall.hangup();
+
+            DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+            final String currentTime = df.format(Calendar.getInstance().getTime());
+
+            final Map map = new HashMap();
+            map.put("caller1", firebaseUser.getUid());
+            map.put("caller2", caller2uid);
+            map.put("dateandtime", currentTime);
+            map.put("duration", timeElapsed());
+            historycallid = createHistoryCallId();
+            mCallDatabase.child(historycallid).updateChildren(map);
+
+            Intent intent = new Intent(getApplicationContext(), EndingCallingScreenActivity.class);
+            intent.putExtra("historycallid", historycallid);
+            startActivity(intent);
+            finish();
         }
 
         @Override
@@ -249,6 +279,7 @@ public class VoiceCallActivity extends AppCompatActivity {
     {
         if(call == null){
             call = sinchClient.getCallClient().callUser(user.getUserid());
+            caller2uid = user.getUserid();
             call.addCallListener(new SinchCallListener());
         }
     }
@@ -267,4 +298,27 @@ public class VoiceCallActivity extends AppCompatActivity {
 
         alertDialogCall.show();
     }*/
+
+    public String timeElapsed(){
+        long timeElapsed = System.currentTimeMillis() - startTime;
+        String hms = String.format("%02d:%02d:%02d",
+                TimeUnit.MILLISECONDS.toHours(timeElapsed),
+                TimeUnit.MILLISECONDS.toMinutes(timeElapsed) -
+                        TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(timeElapsed)),
+                TimeUnit.MILLISECONDS.toSeconds(timeElapsed) -
+                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(timeElapsed)));
+
+        return hms;
+    }
+
+    public String createHistoryCallId(){
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        char tempChar;
+        for (int i = 0; i < 5; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return randomStringBuilder.toString();
+    }
 }

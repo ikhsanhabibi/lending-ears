@@ -7,6 +7,7 @@
     tools:context=".EndingCallingScreenActivity">
 
     <ImageView
+        android:id="@+id/imageView9"
         android:layout_width="500dp"
         android:layout_height="800dp"
         android:scaleType="centerCrop"
@@ -16,10 +17,10 @@
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892"
-        />
+        app:layout_constraintVertical_bias="0.892" />
 
     <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:scaleType="fitCenter"
@@ -32,6 +33,7 @@
         app:layout_constraintVertical_bias="0.128" />
 
     <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="330dp"
         android:layout_height="330dp"
         android:scaleType="fitXY"
@@ -45,16 +47,60 @@
 
 
     <TextView
+        android:id="@+id/dateandtime"
+        android:layout_width="220dp"
+        android:layout_height="42dp"
+        android:text="Sat, 22 Jun 2019, 22:21"
+        android:textColor="#5AABE3"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:text="Mon 17 Jun 2019"
+        android:text="Rate your partner:"
         android:textColor="#5AABE3"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintVertical_bias="0.484" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:text="Duration:"
+        android:textColor="#5AABE3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:text="123123"
+        android:textColor="#5AABE3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
 
     <Button
         android:id="@+id/btn_return"
@@ -69,6 +115,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.672" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
 
 
 </android.support.constraint.ConstraintLayout>

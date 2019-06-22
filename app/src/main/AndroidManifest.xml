@@ -25,6 +25,7 @@
         <activity android:name=".HomeScreenActivity" />
         <activity android:name=".ProfileSettingActivity" />
         <activity android:name=".VoiceCallActivity" />
+        <activity android:name=".EndingCallingScreenActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
