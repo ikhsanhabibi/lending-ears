@@ -13,6 +13,8 @@ import com.example.myapplication.Model.User;
 import com.example.myapplication.R;
 import com.example.myapplication.VoiceCallActivity;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUsersViewHolder> {
@@ -40,6 +42,8 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUse
     public void onBindViewHolder(@NonNull AllUsersViewHolder holder, int position) {
         User user = userArrayList.get(position);
         holder.textViewName.setText(user.getName());
+        holder.textViewCategory.setText(user.getCategory());
+        holder.textViewDescription.setText(user.getDescription());
     }
 
     @Override
@@ -49,11 +53,13 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.AllUse
 
     public class AllUsersViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewName;
+        TextView textViewName, textViewCategory, textViewDescription;
         Button button;
         public AllUsersViewHolder(View itemView) {
             super(itemView);
             textViewName = (TextView)itemView.findViewById(R.id.itemName);
+            textViewCategory = (TextView)itemView.findViewById(R.id.itemCategory);
+            textViewDescription = (TextView)itemView.findViewById(R.id.itemDescription);
             button = itemView.findViewById(R.id.callButton);
 
             button.setOnClickListener(new View.OnClickListener() {

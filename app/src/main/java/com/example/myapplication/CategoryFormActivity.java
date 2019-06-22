@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.speech.tts.Voice;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class CategoryFormActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private DatabaseReference mUserStories;
+    private DatabaseReference mUserStories, mUserDatabase;
 
     Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
 
@@ -53,7 +54,7 @@ public class CategoryFormActivity extends AppCompatActivity {
 
     EditText mDescription;
 
-    String userId, category, description;
+    String userId, category, description, username;
 
     String [] SPINNERLIST = {"Relationship", "Education", "Sports", "Family Life", "Social Issues", "Other"};
 
@@ -79,12 +80,14 @@ public class CategoryFormActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userId = mAuth.getCurrentUser().getUid();
         mUserStories = FirebaseDatabase.getInstance().getReference().child("Stories").child(userId);
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 submitStories();
-                Intent intent = new Intent(CategoryFormActivity.this, FindListenerActivity.class);
+                Intent intent = new Intent(CategoryFormActivity.this, VoiceCallActivity.class);
+                intent.putExtra("findlistener", R.layout.activity_find_listener);
                 startActivity(intent);
                 finish();
             }
@@ -98,17 +101,26 @@ public class CategoryFormActivity extends AppCompatActivity {
         description = mDescription.getText().toString();
         category = betterSpinner.getText().toString();
 
-        Date date = new Date();
+        final Map userStories = new HashMap();
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        String currentTime = formatter.format(date);
+        mUserDatabase.child("username").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String username = dataSnapshot.getValue(String.class);
+                userStories.put("username", username);
+                mUserStories.updateChildren(userStories);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        Map userStories = new HashMap();
+            }
+        });
 
         userStories.put("category", category);
         userStories.put("description", description);
+        userStories.put("userid", userId);
 
-        mUserStories.child(currentTime).updateChildren(userStories);
+        mUserStories.updateChildren(userStories);
     }
 }

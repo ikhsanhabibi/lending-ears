@@ -11,6 +11,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +36,7 @@ import com.sinch.android.rtc.calling.Call;
 import com.sinch.android.rtc.calling.CallClient;
 import com.sinch.android.rtc.calling.CallClientListener;
 import com.sinch.android.rtc.calling.CallListener;
+import com.sinch.android.rtc.calling.CallState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +52,38 @@ public class VoiceCallActivity extends AppCompatActivity {
     ArrayList<User> userArrayList;
     DatabaseReference reference;
 
+    ImageView layer_2, layer_3, hangupBtn;
+
+    Animation layer2, layer3;
+
     TextView header;
+
+    private Chronometer chronometer2;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_voice_call);
+
+        Bundle parameters = getIntent().getExtras();
+
+        if(parameters != null && parameters.containsKey("findlistener")){
+            setContentView(parameters.getInt("findlistener"));
+        layer_2 = (ImageView) findViewById(R.id.layer_2);
+        layer_3 = (ImageView) findViewById(R.id.layer_3);
+
+
+        layer2 = AnimationUtils.loadAnimation(this, R.anim.layer2);
+        layer_2.startAnimation(layer2);
+
+        layer3 = AnimationUtils.loadAnimation(this, R.anim.layer3);
+        layer_3.startAnimation(layer3);
+        }
+        else
+            setContentView(R.layout.activity_voice_call);
+
+
 
         // Change font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
@@ -68,7 +98,7 @@ public class VoiceCallActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         userArrayList = new ArrayList<>();
-        reference = FirebaseDatabase.getInstance().getReference().child("Users");
+        reference = FirebaseDatabase.getInstance().getReference().child("Stories");
 
         // Firebase
         auth = FirebaseAuth.getInstance();
@@ -130,8 +160,22 @@ public class VoiceCallActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onCallEstablished(Call call) {
+        public void onCallEstablished(final Call call) {
             Toast.makeText(getApplicationContext(), "Call established", Toast.LENGTH_SHORT).show();
+            AlertDialog alertDialogCall = new AlertDialog.Builder(VoiceCallActivity.this).create();
+            alertDialogCall.setTitle("CONNECTING");
+            alertDialogCall.setMessage("Connecting..Just wait a little bit..");
+            alertDialogCall.dismiss();
+            setContentView(R.layout.activity_calling_screen);
+            chronometer2 = findViewById(R.id.chronometer2);
+            chronometer2.start();
+            hangupBtn = findViewById(R.id.hangupBtn);
+            hangupBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    call.hangup();
+                }
+            });
         }
 
         @Override
@@ -182,11 +226,11 @@ public class VoiceCallActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                    call.hangup();
+                    incomingcall.hangup();
                 }
             });
 
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Pick", new DialogInterface.OnClickListener() {
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Accept", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     call = incomingcall;
@@ -197,7 +241,6 @@ public class VoiceCallActivity extends AppCompatActivity {
             });
 
             alertDialog.show();
-
         }
     }
 
@@ -207,16 +250,13 @@ public class VoiceCallActivity extends AppCompatActivity {
         if(call == null){
             call = sinchClient.getCallClient().callUser(user.getUserid());
             call.addCallListener(new SinchCallListener());
-
-            openCallerDialog(call);
         }
     }
 
-    private void openCallerDialog(final Call call) {
-
+    /*private void openCallerDialog(final Call call) {
         AlertDialog alertDialogCall = new AlertDialog.Builder(VoiceCallActivity.this).create();
-        alertDialogCall.setTitle("ALERT");
-        alertDialogCall.setMessage("CALLING");
+        alertDialogCall.setTitle("CONNECTING");
+        alertDialogCall.setMessage("Connecting..Just wait a little bit..");
         alertDialogCall.setButton(AlertDialog.BUTTON_NEUTRAL, "Hang up", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -226,5 +266,5 @@ public class VoiceCallActivity extends AppCompatActivity {
         });
 
         alertDialogCall.show();
-    }
+    }*/
 }

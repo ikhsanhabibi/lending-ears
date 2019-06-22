@@ -70,7 +70,7 @@ public class           HomeScreenActivity extends AppCompatActivity {
         listenstoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CategoryFormActivity.class);
+                Intent intent = new Intent(getApplicationContext(), VoiceCallActivity.class);
                 startActivity(intent);
             }
         });

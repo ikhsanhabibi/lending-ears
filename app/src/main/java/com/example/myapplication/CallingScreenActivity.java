@@ -16,5 +16,7 @@ public class CallingScreenActivity extends AppCompatActivity {
 
         chronometer2 = findViewById(R.id.chronometer2);
         chronometer2.start();
+
+
     }
 }

@@ -8,6 +8,40 @@
 
 
     <ImageView
+        android:src="@drawable/background_blue_full"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="681dp"
+        android:layout_marginTop="50dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:scrollbarStyle="insideOverlay"
+        ></android.support.v7.widget.RecyclerView>
+
+    <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal|top">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="ONLINE USERS"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            />
+
+    </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#a6a6a6"
@@ -100,6 +134,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.718" />
+
 
 
 

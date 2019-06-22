@@ -2,12 +2,12 @@ package com.example.myapplication.Model;
 
 public class User {
 
-    public String name, email, password, userid;
+    public String username, category, description, userid;
 
-    public User(String name, String email, String password, String userid) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
+    public User(String username, String category, String description, String userid) {
+        this.username = username;
+        this.category = category;
+        this.description = description;
         this.userid = userid;
     }
 
@@ -16,27 +16,25 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCategory() {
+        return category;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getDescription() { return description; }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getUserid() {
