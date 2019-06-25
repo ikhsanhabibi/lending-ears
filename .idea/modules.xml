@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/LendingEars.iml" filepath="$PROJECT_DIR$/LendingEars.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lending-ears.iml" filepath="$PROJECT_DIR$/lending-ears.iml" />
       <module fileurl="file://$PROJECT_DIR$/sinch-android-rtc-3.12.9/sinch-android-rtc-3.12.9.iml" filepath="$PROJECT_DIR$/sinch-android-rtc-3.12.9/sinch-android-rtc-3.12.9.iml" />
     </modules>
   </component>

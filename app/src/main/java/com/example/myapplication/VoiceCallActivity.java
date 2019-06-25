@@ -190,6 +190,8 @@ public class VoiceCallActivity extends AppCompatActivity {
                     chronometer2.stop();
                 }
             });
+
+
         }
 
         @Override
@@ -208,6 +210,7 @@ public class VoiceCallActivity extends AppCompatActivity {
             map.put("duration", timeElapsed());
             historycallid = createHistoryCallId();
             mCallDatabase.child(historycallid).updateChildren(map);
+
 
             Intent intent = new Intent(getApplicationContext(), EndingCallingScreenActivity.class);
             intent.putExtra("historycallid", historycallid);
@@ -267,6 +270,7 @@ public class VoiceCallActivity extends AppCompatActivity {
                     call.answer();
                     call.addCallListener(new SinchCallListener());
                     Toast.makeText(getApplicationContext(), "Call is started", Toast.LENGTH_LONG).show();
+                    reference.child(firebaseUser.getUid()).removeValue();
                 }
             });
 
