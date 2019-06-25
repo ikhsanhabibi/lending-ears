@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:sinch-android-rtc-3.12.9:unspecified@jar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1e3a786b84bdb092a28946f09b052754/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1e3a786b84bdb092a28946f09b052754/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d50293b033c3f247e01cf8110108e06/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d50293b033c3f247e01cf8110108e06/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
