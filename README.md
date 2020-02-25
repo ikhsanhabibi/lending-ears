@@ -1,4 +1,4 @@
 # lending-ears-app
 
 by
-Ikhsan Habibi
+Ikhsan Habibi, Manh Cuong Tran, Linh Truc Mai
