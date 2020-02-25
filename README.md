@@ -9,7 +9,7 @@
 # How to run?
 
 - Install Android Studio
-- checkout mastermerge
+- checkout mastermerge (default branch)
 - rebuild and clean the project
 - run app
 
