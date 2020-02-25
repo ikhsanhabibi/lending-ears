@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.weiwangcn.betterspinner:library-material:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d47647c88819407e73b9a737bf27b091/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d47647c88819407e73b9a737bf27b091/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1a1de76f1e9a462ecf0cc242203b9905/library-material-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1a1de76f1e9a462ecf0cc242203b9905/library-material-1.1.0/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.weiwangcn.betterspinner/library-material/1.1.0/678bb48e253bdd94a9f4136e49f958c19eeeed44/library-material-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.weiwangcn.betterspinner/library-material/1.1.0/85e67e0fc16a89000824c7e06e27e3411ccf462c/library-material-1.1.0-sources.jar!/" />
     </SOURCES>
